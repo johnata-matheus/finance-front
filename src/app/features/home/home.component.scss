@@ -1,0 +1,21 @@
+@import '../../core/styles/variables.scss';
+
+.introduction {
+  display: grid;
+  justify-items: center;
+  padding: 60px 20px;
+}
+
+.introduction h1{
+  font: 600 3rem/1.25 'Poppins';
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.introduction p {
+  font: 500 1rem/1.5 'Roboto';
+  color: $g1;
+  max-width: 80ch;
+  text-align: center;
+  margin-bottom: 20px;
+}
