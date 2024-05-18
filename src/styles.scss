@@ -1,1 +1,44 @@
-/* You can add global styles to this file, and also import other style files */
+@import 'styles/variables.scss';
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0px;
+  background-color: $b0;
+  color: $w0;
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  display: inline-block;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1200px;
+  box-sizing: border-box;
+}
