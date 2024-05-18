@@ -1,0 +1,15 @@
+@import '../../../../core/styles/variables.scss';
+
+.header-auth{
+  margin-bottom: 60px;
+}
+
+.header-auth h1{
+  font: 600 3rem/1.25 'Poppins';
+  color: $w0;
+}
+
+.header-auth span{
+  font: 500 1rem 'Roboto';
+  color: $g1;
+}
