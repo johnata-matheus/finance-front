@@ -1,0 +1,14 @@
+@import '../../../../core/styles/variables.scss';
+
+.icon-google{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  border: 1px solid $g3;
+  border-radius: 7px;
+  gap: 12px;
+  background-color: inherit;
+  font: 500 1rem 'Poppins';
+  margin-bottom: 40px;
+}
