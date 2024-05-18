@@ -1,0 +1,17 @@
+@import '../../../../core/styles/variables.scss';
+
+.header-bg{
+  border-bottom: 1px solid $g3;
+}
+
+.header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 20px;
+}
+
+.btn-container{
+  display: flex;
+  gap: 20px;
+}
