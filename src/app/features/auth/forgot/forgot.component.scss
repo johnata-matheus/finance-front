@@ -1,0 +1,61 @@
+@import '../../../core/styles/variables.scss';
+
+.forgot {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  height: 100vh; 
+}
+
+.image-side {
+  background-image: url('/assets/images/eth-login.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
+  align-items: center;
+  min-width: 500px;
+}
+
+.form{
+  display: grid;
+  gap: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 4px;
+  font: 600 1rem 'Poppins';
+}
+
+input {
+  padding: 12px;
+  border: 1px solid $g3;
+  border-radius: 7px;
+  width: 100%;
+  background-color: $g4;
+  font: 400 1rem 'Roboto';
+  color: $w0;
+  box-sizing: border-box;
+}
+
+input:focus {
+  outline: none;
+  background: $g4;
+  box-shadow: 0 2px 4px $g4,
+  0 0 0 2px $g4, 
+  0 0 0 4px $w0; 
+}
+
+.back-login{
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+  padding: 12px 0px;
+  font: 600 1rem 'Poppins';
+  cursor: pointer;
+}
