@@ -1,0 +1,83 @@
+@import '../../../core/styles/variables.scss';
+
+.login {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  height: 100vh; 
+}
+
+.image-side {
+  background-image: url('/assets/images/eth-login.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
+  align-items: center;
+  min-width: 500px;
+  overflow-y: hidden;
+  overflow-y: auto;
+}
+
+.form{
+  display: grid;
+  flex-direction: column;
+  gap: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 4px;
+  font: 600 1rem 'Poppins';
+}
+
+input {
+  padding: 12px;
+  border: 1px solid $g3;
+  border-radius: 7px;
+  width: 100%;
+  background-color: $g4;
+  font: 400 1rem 'Roboto';
+  color: $w0;
+  box-sizing: border-box;
+}
+
+input:focus {
+  outline: none;
+  background: $g4;
+  box-shadow: 0 2px 4px $g4,
+  0 0 0 2px $g4, 
+  0 0 0 4px $w0; 
+}
+
+.forgot{
+  margin-top: 12px;
+  color: $w0;
+  font: 500 0.875rem 'Roboto';
+}
+
+.inscrever {
+  display: flex;
+  justify-content: center;
+  font: 500 1rem 'Poppins';
+  color: $g1;
+}
+
+.inscrever a{
+  text-transform: uppercase;
+  color: $w0;
+}
+
+.validator{
+  color: #EE5C66;
+  font: 400 1rem 'Roboto';
+  margin-top: 8px;
+}
+
+.start{
+  place-self: start;
+}

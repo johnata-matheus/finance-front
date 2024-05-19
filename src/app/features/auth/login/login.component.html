@@ -1,0 +1,47 @@
+<section class="login">
+  <div class="image-side">
+  </div>
+  <div class="content">
+    <div>
+      <app-header-auth title="Login" subtitle="Lorem Ipsum is simply dummy text of the printing and"></app-header-auth>
+      <form class="form" [formGroup]="formLogin" #formDir="ngForm">
+        <div>
+          <label for="email">E-mail</label>
+          <input type="email" name="" placeholder="Seu e-mail" formControlName="email">
+          @if (formLogin.get('email')?.invalid && formDir.submitted) {
+            <div class="validator">
+              @if (formLogin.get('email')?.errors?.['required']) {
+                <small>O e-mail é obrigatório.</small>
+              }
+              @if (formLogin.get('email')?.errors?.['email']) {
+                <small>E-mail inválido.</small>
+              }
+            </div>
+          }
+        </div>
+        <div>
+          <label for="password">Senha</label>
+          <input type="password" name="password" placeholder="Sua senha" formControlName="password">
+          @if (formLogin.get('password')?.invalid && formDir.submitted) {
+            <div class="validator">
+              @if (formLogin.get('password')?.errors?.['required']) {
+                <small>A senha é obrigatória.</small>
+              }
+              @if (formLogin.get('password')?.errors?.['minlength']) {
+                <small>Senha deve ter ao menos 4 caracteres.</small>
+              }
+            </div>
+          }
+          <a class="forgot" routerLink="/auth/forgot-password">Esqueceu a senha?</a>
+        </div>
+        <app-button class="start" text="Entrar" (click)="fazerLogin()"></app-button>
+      </form>
+      <app-separation-auth></app-separation-auth>
+      <app-google-auth text="Continue com o google"></app-google-auth>
+      <div class="inscrever">
+        Não tem uma conta?&nbsp;
+        <a routerLink="/auth/signup">se inscrever</a>
+      </div>
+    </div>
+  </div>
+</section>
