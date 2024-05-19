@@ -1,3 +1,4 @@
+@import  'ngx-toastr/toastr';
 @import 'app/core/styles/variables.scss';
 
 html {
@@ -41,4 +42,10 @@ img {
   margin: 0 auto;
   max-width: 1200px;
   box-sizing: border-box;
+}
+
+.toast-container .ngx-toastr{
+  box-shadow: 0 0 0;
+  border-radius: 7px;
+  font: 500 1rem 'Roboto';
 }
