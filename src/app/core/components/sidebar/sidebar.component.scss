@@ -1,0 +1,38 @@
+@import '../../styles/variables.scss';
+
+.sidebar {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 340px;
+  padding: 40px;
+  border-right: 1px solid $g2;
+  height: 100vh;
+  box-sizing: border-box;
+}
+
+.logo{
+  margin-left: 24px;
+  margin-bottom: 60px;
+}
+
+.itens{
+  display: grid;
+  gap: 8px;
+}
+
+.itens a {
+  display: flex;
+  gap: 12px;
+  color: $g1;
+  font: 500 1.125rem 'Poppins';
+  align-items: center;
+  padding: 12px 24px;
+  border-radius: 7px;
+}
+
+.itens li:nth-child(2) a{
+  background-color: $g3;
+  color: $w0;
+}
+
