@@ -1,0 +1,75 @@
+@import '../../../../../core/styles/variables.scss';
+
+table {
+  width: 100%;
+  border-spacing: 0;
+  border-left: 1px solid $g3;
+  border-right: 1px solid $g3;
+  border-bottom: 1px solid $g3;
+  border-radius: 7px;
+}
+
+th {
+  font: 600 0.875rem 'Poppins';
+  padding: 12px 20px;
+  background-color: $g3;
+  text-align: start;
+  text-transform: uppercase;
+}
+
+th:first-child {
+  border-top-left-radius: 7px;
+}
+
+th:last-child {
+  border-top-right-radius: 7px;
+}
+
+td {
+  font: 400 1rem 'Roboto';
+  border-top: 1px solid $g2;
+  padding: 12px 20px;
+  text-align: start;
+}
+
+.category div {
+  font: 400 0.85rem 'Roboto';
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  padding: 6px 12px;
+  border: 1px solid $g2;
+  border-radius: 7px;
+}
+
+.value {
+  position: relative;
+  font: 500 1rem 'Roboto';
+}
+
+.value::before {
+  content: "";
+  position: absolute;
+  width: 4px;
+  height: 12px;
+  top: 3px;
+  left: -12px;
+  background-color: $r1;
+}
+
+.paid, .unpaid {
+  display: inline;
+  padding: 6px 12px;
+  border-radius: 7px;
+  font: 500 0.85rem 'Roboto';
+}
+
+.paid {
+  background-color: $v1;
+  color: $v2;
+}
+
+.unpaid {
+  background-color: $y1;
+  color: $y2;
+}
