@@ -1,0 +1,19 @@
+<div class="info">
+  <div class="info-name">
+    <span class="dashboard" [ngClass]="{ 'active-color': isActive }">Dashboard</span>
+    @if(view){
+      <div>
+        <img src="assets/images/seta.svg" alt="seta">
+      </div>
+    }
+    <span>{{ location }}</span>
+  </div>
+  <div class="perfil">
+    <div>
+      <img src="assets/images/notificacao.svg" alt="notificações">
+    </div>
+    <div>
+      <img src="assets/images/perfil.svg" alt="perfil">
+    </div>
+  </div>
+</div>

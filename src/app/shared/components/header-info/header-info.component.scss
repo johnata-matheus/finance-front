@@ -1,0 +1,25 @@
+.info {
+  display: flex;
+  justify-content: space-between;
+  font: 500 1.125rem 'Poppins';
+}
+
+.dashboard{
+  color: #757575;
+}
+
+.info-name {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.perfil {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.active-color {
+  color: #fff;
+}
