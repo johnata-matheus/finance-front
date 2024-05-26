@@ -45,7 +45,7 @@ export class LoginComponent implements OnInit {
 
     this.authService.login(this.formLogin.getRawValue()).subscribe({
       next: (value) => {
-        this.router.navigate(['/dashboard']);
+        this.router.navigate(['/transactions']);
         console.log(value);
       },
       error: () => this.toastService.error("Usuário ou senha inválidas", '', { timeOut: 3000, progressBar: true })
