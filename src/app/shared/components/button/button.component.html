@@ -1,1 +1,8 @@
-<button class="btn" [ngClass]="{ 'btn-secundary': secundary }">{{ text }}</button>
+<button class="btn" [ngClass]="{ 'btn-secundary': secundary }">
+  @if(showImage){
+    <ng-container>
+      <img [src]="pathImage" alt="Descrição da imagem">
+    </ng-container>
+  }
+  {{ text }}
+</button>

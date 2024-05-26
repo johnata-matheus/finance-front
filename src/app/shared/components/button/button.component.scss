@@ -2,16 +2,19 @@
 
 .btn {
   font: 700 0.75rem 'Poppins';
-  background-color: $w0;
+  background-color: $w1;
   text-transform: uppercase;
   padding: 12px 24px;
   border-radius: 7px;
   border: none;
   cursor: pointer;
+  display: flex;
+  gap: 12px;
+  align-items: center;
 }
 
 .btn-secundary {
-  color: $w0;
+  color: $w1;
   background-color: inherit;
   border: 1px solid $g2;
 }

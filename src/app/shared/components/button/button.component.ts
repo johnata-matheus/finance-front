@@ -11,4 +11,6 @@ import { Component, Input } from '@angular/core';
 export class ButtonComponent {
   @Input() text: string = '';
   @Input() secundary: boolean = false;
+  @Input() showImage: boolean = false;
+  @Input() pathImage: string = '';
 }
