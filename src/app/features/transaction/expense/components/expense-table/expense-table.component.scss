@@ -73,3 +73,33 @@ td {
   background-color: $y1;
   color: $y2;
 }
+
+.empty {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  border: 1px dashed $g2;
+  border-radius: 7px;
+  padding: 60px;
+}
+
+.circle {
+  place-self: center;
+  padding: 25px 20px;
+  border-radius: 50%;
+  background-color: $g2;
+  margin-bottom: 20px;
+}
+
+.empty h2 {
+  font: 600 1.5rem/1.5 'Poppins';
+  margin-bottom: 20px;
+}
+
+.empty p {
+  font: 400 1rem/1.5 'Roboto';
+  color: $g1;
+  margin-bottom: 32px;
+}
+
