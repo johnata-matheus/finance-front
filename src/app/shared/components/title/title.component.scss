@@ -1,3 +1,11 @@
+@import '../../../core/styles/variables.scss';
+
 h1{
   font: 700 2rem 'Poppins';
+}
+
+.title-modal {
+  font: 600 1.5rem 'Poppins';
+  margin-bottom: 4px;
+  color: $w1;
 }
