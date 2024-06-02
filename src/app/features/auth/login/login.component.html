@@ -11,10 +11,10 @@
           @if (formLogin.get('email')?.invalid && formDir.submitted) {
             <div class="validator">
               @if (formLogin.get('email')?.errors?.['required']) {
-                <small>O e-mail é obrigatório.</small>
+                <small>E-mail é obrigatório</small>
               }
               @if (formLogin.get('email')?.errors?.['email']) {
-                <small>E-mail inválido.</small>
+                <small>E-mail inválido</small>
               }
             </div>
           }
@@ -25,10 +25,10 @@
           @if (formLogin.get('password')?.invalid && formDir.submitted) {
             <div class="validator">
               @if (formLogin.get('password')?.errors?.['required']) {
-                <small>A senha é obrigatória.</small>
+                <small>Senha é obrigatória</small>
               }
               @if (formLogin.get('password')?.errors?.['minlength']) {
-                <small>Senha deve ter ao menos 4 caracteres.</small>
+                <small>Senha deve ter ao menos 4 caracteres</small>
               }
             </div>
           }
