@@ -1,0 +1,10 @@
+<div class="flex">
+  <div>
+    <app-title [title]="'Tipo de transação'" [secundaryTitle]="true"></app-title>
+    <app-subtitle [subtitle]="'Selecione a opção de transação que deseja lançar'" [secundarySubtitle]="true"></app-subtitle>
+  </div>
+  <div class="options">
+    <app-button (click)="openModalExpense()" text="Adicionar despesa"></app-button>
+    <app-button text="Adicionar receita"></app-button>
+  </div>
+</div>

@@ -1,0 +1,18 @@
+@import '../../../../core/styles/variables.scss';
+
+.flex {
+  display: flex;
+  gap: 40px;
+  flex-direction: column;
+  padding: 40px;
+  border-radius: 7px;
+  background-color: $g4;
+  border: 1px solid $g2;
+  align-items: start;
+}
+
+.options{
+  display: flex;
+  gap: 20px;
+}
+
