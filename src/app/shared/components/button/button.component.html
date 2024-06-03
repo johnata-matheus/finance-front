@@ -1,7 +1,7 @@
-<button class="btn" [ngClass]="{ 'btn-secundary': secundary }">
+<button class="btn" [ngClass]="{ 'btn-secundary': secundary, 'btn-delete': btnDelete }">
   @if(showImage){
     <ng-container>
-      <img [src]="pathImage" alt="Descrição da imagem">
+      <img class="teste" [src]="pathImage" alt="Descrição da imagem">
     </ng-container>
   }
   {{ text }}

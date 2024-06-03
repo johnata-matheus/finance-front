@@ -11,10 +11,18 @@
   display: inline-flex;
   gap: 12px;
   align-items: center;
+  color: $g4;
 }
 
 .btn-secundary {
   color: $w1;
   background-color: inherit;
   border: 1px solid $g2;
+}
+
+.btn-delete {
+  border: none;
+  padding: 11px 24px;
+  color: $w0;
+  background-color: #dc2626;
 }
