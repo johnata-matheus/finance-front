@@ -1,0 +1,9 @@
+<div class="modal-delete">
+  <app-title title="Excluir essa despesa?" [secundaryTitle]="true"></app-title>
+  <app-subtitle subtitle="Essa ação não pode ser desfeita" [secundarySubtitle]="true"></app-subtitle>
+
+  <div class="buttons">
+    <app-button text="cancelar" [secundary]="true" (click)="closeModal()"></app-button>
+    <app-button text="Excluir" [btnDelete]="true" (click)="deleteExpense()" [showImage]="true" pathImage="assets/images/delete.svg"></app-button>
+  </div>
+</div>

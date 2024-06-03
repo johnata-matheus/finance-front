@@ -1,0 +1,15 @@
+@import '../../../core/styles/variables.scss';
+
+.modal-delete {
+  padding: 40px;
+  border: 1px solid $g2;
+  border-radius: 7px;
+  background-color: $g4;
+}
+
+.buttons {
+  display: flex;
+  gap: 20px;
+  margin-top: 40px;
+  justify-content: flex-end;
+}
