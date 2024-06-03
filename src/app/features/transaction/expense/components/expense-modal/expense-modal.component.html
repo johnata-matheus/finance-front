@@ -1,0 +1,83 @@
+<div class="modal">
+  <app-title [title]="statusExpense ? 'Editar despesa' : 'Criar despesa'" [secundaryTitle]="true"></app-title>
+  <app-subtitle subtitle="preencha os campos a seguir" [secundarySubtitle]="true"></app-subtitle>
+  <form class="form" [formGroup]="formExpense" #formDir="ngForm">
+    <div>
+      <label for="description">Descrição</label>
+      <input type="text" name="description" placeholder="Descrição" formControlName="description">
+      @if (formExpense.get('description')?.invalid && formDir.submitted) {
+        <div class="validator">
+          @if (formExpense.get('description')?.errors?.['required']) {
+            <small>Descrição é obrigatório</small>
+          }
+        </div>
+      }
+    </div>
+
+    <div class="flex">
+      <div>
+        <label for="value">Valor</label>
+        <input type="number" name="value" placeholder="Valor" formControlName="value">
+        @if (formExpense.get('value')?.invalid && formDir.submitted) {
+          <div class="validator">
+            @if (formExpense.get('value')?.errors?.['required']) {
+              <small>Valor é obrigatório</small>
+            }
+          </div>
+        }
+      </div>
+      <div>
+        <label for="date">Data</label>
+        <input type="date" name="date" formControlName="date">
+        @if (formExpense.get('date')?.invalid && formDir.submitted) {
+          <div class="validator">
+            @if (formExpense.get('date')?.errors?.['required']) {
+              <small>Data é obrigatório</small>
+            }
+          </div>
+        }
+      </div>
+    </div>
+
+    <div class="flex">
+      <div>
+        <label for="id_account">Conta</label>
+        <select name="id_account" formControlName="id_account">
+          @for(account of accounts; track account) {        
+            <option value="{{ account.id }}">{{ account.type }}</option>
+          }
+        </select>
+      </div>
+      
+      <div>
+        <label for="category">Categoria</label>
+        <select name="category" formControlName="category">
+          <option value="alimentacao">Alimentação</option>
+          <option value="streaming">Streaming</option>
+        </select>
+        @if (formExpense.get('category')?.invalid && formDir.submitted) {
+          <div class="validator">
+            @if (formExpense.get('category')?.errors?.['required']) {
+              <small>Categoria é obrigatório</small>
+            }
+          </div>
+        }
+      </div>
+    </div>
+    
+    <div class="switch">
+      <div>
+        <input type="checkbox" name="paid_out" id="paid_out" formControlName="paid_out">
+        <label class="button" for="paid_out"></label>
+      </div>
+      @if(formExpense.get('paid_out')?.value){
+        <div class="checked">Já <span class="pay">Paguei</span></div>
+      } @else {
+        <div class="checked">Não <span class="notpay">Paguei</span></div>
+      }
+    </div>
+    
+    <app-button [text]="statusExpense ? 'Salvar alterações' : 'Criar despesa'" (click)="statusExpense ? updateExpense() : createExpense()"></app-button>
+
+  </form>
+</div>
