@@ -5,6 +5,5 @@ export interface Expense {
   category: string;
   date: Date;
   paid_out: boolean;
-  accountId: number;
-  userId: number;
+  id_account?: number;
 }
