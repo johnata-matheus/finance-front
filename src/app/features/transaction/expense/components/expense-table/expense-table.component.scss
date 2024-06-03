@@ -3,9 +3,10 @@
 table {
   width: 100%;
   border-spacing: 0;
-  border-left: 1px solid $g3;
-  border-right: 1px solid $g3;
-  border-bottom: 1px solid $g3;
+  border-left: 1px solid $g2;
+  border-right: 1px solid $g2;
+  border-bottom: 1px solid $g2;
+  border-top: 1px solid $g2;
   border-radius: 7px;
 }
 
@@ -40,6 +41,7 @@ td {
   padding: 6px 12px;
   border: 1px solid $g2;
   border-radius: 7px;
+  min-width: max-content;
 }
 
 .value {
@@ -58,10 +60,11 @@ td {
 }
 
 .paid, .unpaid {
-  display: inline;
+  display: inline-flex;
   padding: 6px 12px;
   border-radius: 7px;
   font: 500 0.85rem 'Roboto';
+  min-width: max-content;
 }
 
 .paid {
@@ -103,3 +106,14 @@ td {
   margin-bottom: 32px;
 }
 
+.options {
+  border: none;
+  background-color: $g4;
+  color: $w1;
+  padding: 4px;
+  cursor: pointer;
+}
+
+.options:first-child{
+  margin-right: 12px;
+}

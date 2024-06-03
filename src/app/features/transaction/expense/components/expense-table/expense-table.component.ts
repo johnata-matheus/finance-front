@@ -7,52 +7,51 @@ import { ButtonComponent } from '../../../../../shared/components/button/button.
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { ModalTransactionComponent } from '../../../components/modal-transaction/modal-transaction.component';
 import { ExpenseModalComponent } from '../expense-modal/expense-modal.component';
+import { ToastrService } from 'ngx-toastr';
+import { ModalDeleteComponent } from '../../../../../shared/components/modal-delete/modal-delete.component';
+import { DialogRef } from '@angular/cdk/dialog';
 
 @Component({
   selector: 'app-expense-table',
   standalone: true,
-  imports: [CommonModule, TruncatePipe, ButtonComponent],
+  imports: [CommonModule, TruncatePipe, ButtonComponent, ExpenseModalComponent],
   templateUrl: './expense-table.component.html',
   styleUrl: './expense-table.component.scss'
 })
-export class ExpenseTableComponent implements OnChanges {
+export class ExpenseTableComponent implements OnInit {
 
   expenses: Expense[] = [];
   
   constructor(
     private expenseService: ExpenseService,
-    private matDialog: MatDialog
-  ) {
-    this.getExpenses()
+    private matDialog: MatDialog,
+    private toastService: ToastrService,
+  ) {}
+
+  ngOnInit(): void {
+    this.getExpenses();
   }
 
-  ngOnChanges(changes: SimpleChanges): void {
-    
+  openModalExpense() {
+    this.matDialog.open(ExpenseModalComponent);
   }
 
-  openModalExpense(){
-    const modalExpense = this.matDialog.open(ExpenseModalComponent);
+  openModalEditExpense(expense: Expense) {
+    this.matDialog.open(ExpenseModalComponent, {
+      data: {expense}
+    })
+  }
 
-    modalExpense.componentInstance.success.subscribe(() => {
-      modalExpense.close();
+  openModalDeleteExpense(id: number) {
+    this.matDialog.open(ModalDeleteComponent, {
+      data: {id}
     })
   }
     
   getExpenses(){
     this.expenseService.fetchUserExpenses();
     this.expenseService.getUserExpenses().subscribe({
-      next: value => this.expenses = value,
-      error: err => console.error("errooo!")
+      next: value => this.expenses = value
     });
   }
-  
-  getPaidStatus(isPaid: boolean): string {
-    return isPaid ? "Pago" : "Não Pago";
-  }
-
-
-  onExpenseCreated(): void {
-    this.getExpenses();
-  }
-
 }

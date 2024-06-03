@@ -6,7 +6,7 @@
       <th>Data</th>
       <th>Valor</th>
       <th>Status</th>
-      <th></th>
+      <th>Ações</th>
     </tr>
     @for(expense of expenses; track $index){
       <tr>
@@ -25,11 +25,16 @@
         </td>
         <td>
           <div [ngClass]="expense.paid_out ? 'paid' : 'unpaid'">
-            {{ getPaidStatus(expense.paid_out) }}
+            {{ expense.paid_out ? 'Pago' : 'Não pago' }}
           </div>
         </td>
         <td>
-          <img src="assets/images/options.svg" alt="">
+          <button class="options" (click)="openModalEditExpense(expense)">
+            <img src="assets/images/edit.svg" alt="">
+          </button>
+          <button class="options" (click)="openModalDeleteExpense(expense.id!)">
+            <img src="assets/images/delete.svg" alt="">
+          </button>
         </td>
       </tr>
     }
@@ -42,7 +47,7 @@
       <img src="assets/images/empty.svg" alt="">
     </div>
 
-    <h2>Nenhuma despesa Criada</h2>
+    <h2>Nenhuma despesa criada</h2>
     <p>No momento, você não possui despesas registradas. <br>Adicione uma nova despesa para começar a acompanhar seus gastos.</p>
     
     <app-button text="Adicionar despesa" [secundary]="true" (click)="openModalExpense()"></app-button>
