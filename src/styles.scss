@@ -1,3 +1,24 @@
+@use '@angular/material' as mat;
+
+@include mat.core();
+
+$finance-front-primary: mat.define-palette(mat.$indigo-palette);
+$finance-front-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+
+$finance-front-warn: mat.define-palette(mat.$red-palette);
+
+$finance-front-theme: mat.define-light-theme((
+  color: (
+    primary: $finance-front-primary,
+    accent: $finance-front-accent,
+    warn: $finance-front-warn,
+  ),
+  typography: mat.define-typography-config(),
+  density: 0
+));
+
+@include mat.all-component-themes($finance-front-theme);
+
 @import  'ngx-toastr/toastr';
 @import 'app/core/styles/variables.scss';
 
@@ -48,4 +69,32 @@ img {
   box-shadow: 0 0 0;
   border-radius: 7px;
   font: 500 1rem 'Roboto';
+}
+
+.validator{
+  color: #EE5C66;
+  font: 400 1rem 'Roboto';
+  margin-top: 8px;
+}
+
+.container-main {
+  width: calc(100% - 340px);
+  margin-left: 340px;
+  height: 100vh;
+}
+
+.main {
+  max-width: 1100px;
+  padding: 32px 40px;
+  margin: 0 auto;
+}
+
+.mdc-dialog__surface {
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
+
+.cdk-overlay-dark-backdrop {
+  background-color: rgba(0, 0, 0, 0.5); 
+  backdrop-filter: blur(3.5px); 
 }
