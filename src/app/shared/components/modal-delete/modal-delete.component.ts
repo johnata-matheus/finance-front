@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { Expense } from '../../../features/transaction/expense/models/Expense';
+import { Expense } from '../../../features/transaction/expense/models/IExpense';
 import { ExpenseService } from '../../../features/transaction/expense/services/expense.service';
 import { ToastrService } from 'ngx-toastr';
 import { DialogRef } from '@angular/cdk/dialog';
@@ -23,7 +23,7 @@ export class ModalDeleteComponent {
     private toastService: ToastrService,
     private dialogRef: DialogRef,
     @Inject(MAT_DIALOG_DATA) private data: { id: number }
-  ) {}
+  ) { }
 
   deleteExpense() {
     const expenseId = this.data.id;

@@ -4,9 +4,9 @@ import { ButtonComponent } from '../../../../../shared/components/button/button.
 import { CommonModule } from '@angular/common';
 import { ExpenseService } from '../../services/expense.service';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { Account } from '../../models/Account';
+import { Account } from '../../models/IAccount';
 import { ToastrService } from 'ngx-toastr';
-import { Expense } from '../../models/Expense';
+import { Expense } from '../../models/IExpense';
 import { MAT_DIALOG_DATA, MatDialogModule } from '@angular/material/dialog';
 import { TitleComponent } from '../../../../../shared/components/title/title.component';
 import { SubtitleComponent } from '../../../../../shared/components/subtitle/subtitle.component';
@@ -15,7 +15,7 @@ import { DialogRef } from '@angular/cdk/dialog';
 @Component({
   selector: 'app-expense-modal',
   standalone: true,
-  imports: [CommonModule, MatSlideToggleModule, MatDialogModule , ButtonComponent, ReactiveFormsModule, TitleComponent, SubtitleComponent],
+  imports: [CommonModule, MatSlideToggleModule, MatDialogModule, ButtonComponent, ReactiveFormsModule, TitleComponent, SubtitleComponent],
   templateUrl: './expense-modal.component.html',
   styleUrl: './expense-modal.component.scss'
 })
@@ -32,7 +32,7 @@ export class ExpenseModalComponent implements OnInit {
     private dialogRef: DialogRef,
     private toastService: ToastrService,
     @Inject(MAT_DIALOG_DATA) private data: { expense: Expense },
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.formularioExpense();
@@ -40,7 +40,7 @@ export class ExpenseModalComponent implements OnInit {
 
     if (this.data && this.data.expense) {
       this.formExpense.patchValue(this.data.expense);
-      this.statusExpense = true; 
+      this.statusExpense = true;
     }
   }
 
@@ -56,7 +56,7 @@ export class ExpenseModalComponent implements OnInit {
   }
 
   createExpense() {
-    if(this.formExpense.invalid){
+    if (this.formExpense.invalid) {
       return;
     }
 
@@ -70,7 +70,7 @@ export class ExpenseModalComponent implements OnInit {
   }
 
   updateExpense() {
-    if(this.formExpense.invalid){
+    if (this.formExpense.invalid) {
       return;
     }
 
@@ -100,7 +100,7 @@ export class ExpenseModalComponent implements OnInit {
     this.expenseService.getUserAccounts().subscribe({
       next: (value) => {
         this.accounts = value
-        
+
         if (this.accounts.length > 0) {
           this.formExpense.patchValue({
             id_account: this.accounts[0].id

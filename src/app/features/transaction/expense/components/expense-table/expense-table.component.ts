@@ -1,5 +1,5 @@
 import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
-import { Expense } from '../../models/Expense';
+import { Expense } from '../../models/IExpense';
 import { ExpenseService } from '../../services/expense.service';
 import { CommonModule } from '@angular/common';
 import { TruncatePipe } from '../../../../../shared/pipes/truncate.pipe';
@@ -21,12 +21,12 @@ import { DialogRef } from '@angular/cdk/dialog';
 export class ExpenseTableComponent implements OnInit {
 
   expenses: Expense[] = [];
-  
+
   constructor(
     private expenseService: ExpenseService,
     private matDialog: MatDialog,
     private toastService: ToastrService,
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.getExpenses();
@@ -38,17 +38,17 @@ export class ExpenseTableComponent implements OnInit {
 
   openModalEditExpense(expense: Expense) {
     this.matDialog.open(ExpenseModalComponent, {
-      data: {expense}
+      data: { expense }
     })
   }
 
   openModalDeleteExpense(id: number) {
     this.matDialog.open(ModalDeleteComponent, {
-      data: {id}
+      data: { id }
     })
   }
-    
-  getExpenses(){
+
+  getExpenses() {
     this.expenseService.fetchUserExpenses();
     this.expenseService.getUserExpenses().subscribe({
       next: value => this.expenses = value

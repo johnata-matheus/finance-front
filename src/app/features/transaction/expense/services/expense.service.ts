@@ -2,8 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from '../../../../../environments/environment';
 import { BehaviorSubject, Observable, map, tap } from 'rxjs';
-import { Expense } from '../models/Expense';
-import { Account } from '../models/Account';
+import { Expense } from '../models/IExpense';
+import { Account } from '../models/IAccount';
 
 @Injectable({
   providedIn: 'root'
@@ -21,11 +21,11 @@ export class ExpenseService {
     this.httpClient.get<Expense[]>(`${this.ApiUrl}/expense/teste`)
       .subscribe(expenses => this.expensesSubject.next(expenses));
   }
-  
+
   getUserExpenses(): Observable<Expense[]> {
     return this.expenses$;
   }
-  
+
   createUserExpense(expense: Expense): Observable<Expense> {
     return this.httpClient.post<Expense>(`${this.ApiUrl}/expense`, expense)
       .pipe(
@@ -48,15 +48,15 @@ export class ExpenseService {
 
   deleteUserExpense(id: number): Observable<void> {
     return this.httpClient.delete<void>(`${this.ApiUrl}/expense/${id}`)
-    .pipe(
-      tap((deleteExpenseId) => {
-        const currentExpense = this.expensesSubject.value.filter(expense => expense.id !== deleteExpenseId)
-        this.expensesSubject.next(currentExpense);
-      })
-    );
+      .pipe(
+        tap((deleteExpenseId) => {
+          const currentExpense = this.expensesSubject.value.filter(expense => expense.id !== deleteExpenseId)
+          this.expensesSubject.next(currentExpense);
+        })
+      );
   }
-  
-  getUserAccounts(): Observable<Account[]>{
+
+  getUserAccounts(): Observable<Account[]> {
     return this.httpClient.get<Account[]>(`${this.ApiUrl}/account`);
   }
 }

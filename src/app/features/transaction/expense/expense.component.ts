@@ -3,7 +3,7 @@ import { SidebarComponent } from '../../../core/components/sidebar/sidebar.compo
 import { ButtonComponent } from '../../../shared/components/button/button.component';
 import { ExpenseTableComponent } from './components/expense-table/expense-table.component';
 import { Observable } from 'rxjs';
-import { Expense } from './models/Expense';
+import { Expense } from './models/IExpense';
 import { ExpenseService } from './services/expense.service';
 
 
