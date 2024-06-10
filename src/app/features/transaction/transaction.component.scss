@@ -1,0 +1,31 @@
+@import '../../core/styles/variables.scss';
+
+.expenses {
+  margin-top: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.filtros {
+  margin-top: 32px;
+  margin-bottom: 32px;
+  display: flex;
+  justify-content: space-between;
+  font: 500 1rem 'Roboto';
+  align-items: center;
+  border-bottom: 1px solid $g3;
+}
+
+.filtros button {
+  border: 1px solid $g3;
+  background-color: $g4;
+  color: $w1;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  border-radius: 7px;
+  font: 500 0.875rem 'Roboto';
+  margin-bottom: 12px;
+}

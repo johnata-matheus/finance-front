@@ -1,0 +1,26 @@
+<app-sidebar></app-sidebar>
+
+<main class="container-main">
+  <div class="main">
+    <app-header-info location="Transações"></app-header-info>
+
+    <div class="expenses">
+      <div>
+        <app-title title="Transações"></app-title>
+        <app-subtitle subtitle="Gerenciamento de receitas e despesas"></app-subtitle>
+      </div>
+      <app-button (click)="openDialog()" text="Nova transação" [showImage]="true" pathImage="assets/images/criar.svg"></app-button>
+    </div>
+
+    <div class="filtros">
+      <app-section></app-section>
+      <div>
+        <button>
+          <span>Mês</span>
+          <img src="assets/images/abrir.svg" alt="abrir">
+        </button>
+      </div>
+    </div>
+    <router-outlet /> 
+  </div>
+</main>
