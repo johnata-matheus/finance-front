@@ -1,0 +1,17 @@
+<app-sidebar></app-sidebar>
+<main class="container-main">
+  <div class="main">
+    <app-header-info location="Contas"></app-header-info>
+    <div class="account">
+      <div>
+        <app-title title="Minhas contas"></app-title>
+        <app-subtitle subtitle="Gerenciamento de contas"></app-subtitle>
+      </div>
+      <app-button text="Nova conta" [showImage]="true" pathImage="assets/images/criar.svg" (click)="openModalAccount()"></app-button>
+    </div>
+
+    <div class="account-list">
+      <app-account-item></app-account-item>
+    </div>
+  </div>
+</main>
