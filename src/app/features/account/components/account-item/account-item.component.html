@@ -1,0 +1,18 @@
+<div class="account-list">
+  @for(account of accounts; track $index) {
+    <div class="account-item">
+      <div class="flex">
+        <h2>{{ account.title }}</h2>
+        <button [matMenuTriggerFor]="menu">
+          <img src="assets/images/options.svg" alt="opções">
+        </button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item (click)="openModalUpdateAccount(account)">Editar</button>
+          <button mat-menu-item (click)="openModalDeleteAccount(account.id!)">Deletar</button>
+        </mat-menu>
+      </div>
+      <p class="balance">Saldo:&nbsp;<span>R$ {{ account.balance }}</span></p>
+    </div>
+  }
+</div>
+

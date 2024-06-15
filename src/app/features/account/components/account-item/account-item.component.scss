@@ -1,0 +1,54 @@
+@import '../../../../core/styles/variables.scss';
+
+.account-list {
+  margin-top: 60px;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+}
+
+.account-item {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+  min-width: 260px;
+  border: 1px solid $g2;
+  border-radius: 7px;
+  box-sizing: border-box;
+}
+
+.flex {
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+  align-items: start;
+  margin-bottom: 32px;
+}
+
+.flex button {
+  background-color: inherit;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+}
+
+.flex h2 {
+  font: 400 1.25rem 'Poppins';
+  max-width: 12ch;
+}
+
+.balance {
+  font: 400 1.125rem 'Roboto';
+  color: $g1;
+  display: flex;
+}
+
+.balance span {
+  color: $v1;
+  font: 500 1.125rem 'Roboto';
+}
+
+#menu {
+  background-color: aqua;
+}
