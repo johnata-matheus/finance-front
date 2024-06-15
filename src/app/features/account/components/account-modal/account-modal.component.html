@@ -1,0 +1,45 @@
+<div class="modal">
+  <app-title [title]="statusAccount ? 'Editar conta' : 'Criar conta'" [secundaryTitle]="true"></app-title>
+  <app-subtitle subtitle="preencha os campos a seguir" [secundarySubtitle]="true"></app-subtitle>
+  <form class="form" [formGroup]="formAccount" #formDir="ngForm">
+    <div>
+      <label for="title">Título da conta</label>
+      <input type="text" name="title" formControlName="title" placeholder="Título">
+      @if (formAccount.get('title')?.invalid && formDir.submitted) {
+        <div class="validator">
+          @if (formAccount.get('title')?.errors?.['required']) {
+            <small>Título é obrigatório</small>
+          }
+        </div>
+      }
+    </div>
+
+    <div class="flex">
+      <div>
+        <label for="balance">Saldo</label>
+        <input type="number" name="balance" placeholder="Saldo" formControlName="balance">
+        @if (formAccount.get('balance')?.invalid && formDir.submitted) {
+          <div class="validator">
+            @if (formAccount.get('balance')?.errors?.['required']) {
+              <small>Saldo é obrigatório</small>
+            }
+          </div>
+        }
+      </div>
+      <div>
+        <label for="type">Categoria</label>
+        <input type="text" name="type" placeholder="Categoria" formControlName="type">
+        @if (formAccount.get('type')?.invalid && formDir.submitted) {
+          <div class="validator">
+            @if (formAccount.get('type')?.errors?.['required']) {
+              <small>Tipo é obrigatório</small>
+            }
+          </div>
+        }
+      </div>
+    </div>
+
+    <app-button [text]="statusAccount ? 'Salvar alterações' : 'Criar conta'" (click)="statusAccount ? updateAccount() : createAccount()"></app-button>
+
+  </form>
+</div>
